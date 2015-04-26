@@ -24,10 +24,9 @@ var Enemy = function(row) {
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
     this.x = this.x + this.speed*dt;
-    if (this.x > 505){
+    if (this.x > 505) {
         this.x = -80;
-    }
-    else if (this.x +50 > player.x && this.x < player.x+50 && this.y+30 > player.y && this.y < player.y+30){
+    } else if (this.x +50 > player.x && this.x < player.x+50 && this.y+30 > player.y && this.y < player.y+30){
         player.reset();
         score -= 1;
         scoreDraw();
@@ -35,12 +34,12 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 
 var Player = function(){
@@ -49,16 +48,13 @@ var Player = function(){
 };
 
 Player.prototype.update = function(dt){
-    if (this.x < -20){
+    if (this.x < -20) {
         this.x = -20;
-    }
-    else if (this.x >420){
+    } else if (this.x >420) {
         this.x = 420;
-    }
-    else if (this.y > 430){
+    } else if (this.y > 430) {
         this.y = 430;
-    }
-    else if (this.y < 20){
+    } else if (this.y < 20) {
         player.reset();
         score += 1;
         booster += 0.3;
@@ -67,42 +63,42 @@ Player.prototype.update = function(dt){
         scoreDraw();
     }
 
-}
+};
 
 Player.prototype.reset = function(){
     this.x=200
     this.y=400
-}
+};
 
 Player.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 Player.prototype.handleInput = function(keyPressed){
     switch(keyPressed){
         case "left":
-            this.x -=30;
+            this.x -=83;
             break;
         case "right":
-            this.x +=30;
+            this.x +=83;
             break;
         case "up":
-            this.y -= 30;
+            this.y -= 83;
             break;
         case "down":
-            this.y += 30;
+            this.y += 83;
             break;
         default:
             break;
     }
 
-}
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-allEnemies = [new Enemy(0), new Enemy (1), new Enemy(2)];
+var allEnemies = [new Enemy(0), new Enemy (1), new Enemy(2)];
 
 var player = new Player();
 
