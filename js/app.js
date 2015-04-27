@@ -48,12 +48,12 @@ var Player = function(){
 };
 
 Player.prototype.update = function(dt){
-    if (this.x < -20) {
-        this.x = -20;
-    } else if (this.x >420) {
-        this.x = 420;
-    } else if (this.y > 430) {
-        this.y = 430;
+    if (this.x < -2) {
+        this.x = -2;
+    } else if (this.x >402) {
+        this.x = 402;
+    } else if (this.y > 380) {
+        this.y = 380;
     } else if (this.y < 20) {
         player.reset();
         score += 1;
@@ -66,8 +66,8 @@ Player.prototype.update = function(dt){
 };
 
 Player.prototype.reset = function(){
-    this.x=200
-    this.y=400
+    this.x=200;
+    this.y=380;
 };
 
 Player.prototype.render = function(){
@@ -77,10 +77,10 @@ Player.prototype.render = function(){
 Player.prototype.handleInput = function(keyPressed){
     switch(keyPressed){
         case "left":
-            this.x -=83;
+            this.x -=101;
             break;
         case "right":
-            this.x +=83;
+            this.x +=101;
             break;
         case "up":
             this.y -= 83;
