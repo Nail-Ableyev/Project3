@@ -104,9 +104,9 @@ var player = new Player();
 
 //populate previously epmtied array with enemies.
 var arrayFiller = function(arrayToFill){
-    for (i=0; i<3; i++){
+    for (var i=0; i<3; i++){
         arrayToFill.push(new Enemy(i));
-    };
+    }
 };
 
 //Function to draw the score.Variable score
